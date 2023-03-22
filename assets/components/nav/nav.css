@@ -1,0 +1,30 @@
+/* Nav */
+
+.primary-nav {
+  padding: 1rem;
+  background: #06213b;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+.nav-item {
+  padding: 0.5rem 2rem;
+  background: rgb(7, 54, 113);
+  background: linear-gradient(
+    45deg,
+    rgba(7, 54, 113, 1) 0%,
+    rgba(141, 7, 212, 1) 100%
+  );
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #fff;
+}
