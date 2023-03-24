@@ -1,6 +1,14 @@
 // Add nav.html to the DOM
 const navHTML = fetch('assets/components/nav/nav.html').then(response => response.text());
-navHTML.then(html => document.querySelector('body').insertAdjacentHTML('afterbegin', html));
+navHTML.then(html => document.body.insertAdjacentHTML('afterbegin', html));
+
+// Add nav.css
+const navCSS = fetch('assets/components/nav/nav.css').then(response => response.text());
+navCSS.then(css => {
+    const style = document.createElement('style');
+    style.innerHTML = css;
+    document.head.appendChild(style);
+});
 
 // Add nav.js
 const navJS = fetch('assets/components/nav/nav.js').then(response => response.text());
