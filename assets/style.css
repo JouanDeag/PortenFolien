@@ -3,6 +3,7 @@
   font-size: 16px;
   color: white;
   background-color: #fff;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -167,4 +168,30 @@ body {
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
   width: 100%;
+}
+
+/* auto-grid */
+
+.auto-grid {
+  margin-top: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  border: 6px solid #fff;
+  padding: 0.5rem;
+}
+
+.grid-image {
+  aspect-ratio: 1;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.grid-item:hover {
+  rotate: 360deg;
+  transition: rotate 0.5s ease-in-out;
 }
