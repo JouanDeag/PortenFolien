@@ -2,6 +2,10 @@
 const navHTML = fetch('assets/components/nav/nav.html').then(response => response.text());
 navHTML.then(html => document.querySelector('body').insertAdjacentHTML('afterbegin', html));
 
+// Add nav.js
+const navJS = fetch('assets/components/nav/nav.js').then(response => response.text());
+navJS.then(js => eval(js));
+
 const fem = `______ _____ ______ __  __            _____ 
 |  ____|_   _|  ____|  \\\/  |          | ____|
 | |__    | | | |__  | \\  / |  ______  | |__  

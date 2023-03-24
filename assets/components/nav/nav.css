@@ -4,6 +4,7 @@
   padding: 1rem;
   background: #06213b;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
 }
 
 .nav-list {
@@ -27,4 +28,79 @@
 .nav-item a {
   text-decoration: none;
   color: #fff;
+}
+
+/* Mobile */
+
+.nav__burger {
+  display: none;
+  height: 2rem;
+}
+
+.nav__burger-line {
+  width: 2rem;
+  height: 0.2rem;
+  background-color: #fff;
+  margin: 0.3rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.active .nav__burger-line:nth-child(1) {
+  rotate: 45deg;
+  translate: 0 0.5rem;
+}
+
+.active .nav__burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.active .nav__burger-line:nth-child(3) {
+  rotate: -45deg;
+  translate: 0 -0.5rem;
+}
+
+.active.primary-nav {
+  max-height: 4rem;
+  padding: 0.5rem;
+}
+
+.active.primary-nav,
+.active .nav-list,
+.active .nav-item,
+.active .nav-item a {
+  max-height: initial;
+  opacity: 1;
+}
+
+.active .nav-item {
+  padding: 0.25rem 0.5rem;
+}
+
+.active .nav-list {
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .primary-nav,
+  .nav-list,
+  .nav-item,
+  .nav-item a {
+    max-height: 0;
+    padding: 0;
+  }
+
+  .nav-item a {
+    opacity: 0;
+  }
+
+  .nav__burger {
+    display: block;
+    position: absolute;
+    inset: 0;
+    padding: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
 }
