@@ -80,7 +80,8 @@
 .active.primary-nav,
 .active .nav-list,
 .active .nav-item,
-.active .nav-item a {
+.active .nav-item a,
+.nav-item p {
   max-height: initial;
   opacity: 1;
 }
@@ -92,6 +93,68 @@
 .active .nav-list {
   justify-content: flex-end;
   gap: 0.5rem;
+}
+
+.dropdown-trigger:hover {
+  position: relative;
+}
+
+.dropdown-trigger:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25rem;
+  right: 40%;
+  width: 0;
+  height: 0;
+
+  rotate: 180deg;
+  border-left: 0.75rem solid transparent;
+  border-right: 0.75rem solid transparent;
+  border-top: 0.75rem solid #eee;
+}
+
+.popup-dropdown {
+  display: none;
+}
+
+.dropdown-trigger {
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-trigger:hover .popup-dropdown {
+  position: absolute;
+  bottom: -2.25rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+
+  z-index: 100;
+
+  padding-top: 1rem;
+  background: #eee;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-trigger:hover .popup-dropdown a {
+  min-width: 18ch;
+  color: #000;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.popup-dropdown a {
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.popup-dropdown a:hover {
+  border-bottom: 2px solid #000;
 }
 
 @media (max-width: 768px) {
@@ -114,6 +177,18 @@
     padding: 0.5rem;
     color: #fff;
     cursor: pointer;
+  }
+
+  .dropdown-trigger:hover .popup-dropdown {
+    flex-direction: column;
+    gap: 0.5rem;
+    top: 2.25rem;
+    left: 0;
+    height: calc(8 * 2rem);
+  }
+
+  .dropdown-trigger:hover::after {
+    bottom: -0.5rem;
   }
 }
 
